@@ -1,0 +1,16 @@
+#intelliJ IDEA project files
+.idea/
+*.iml
+*.ipr
+*.iws
+
+out/
+#Gradle
+build/
+.gradle
+#Temp files
+*.bak
+*.tmp
+*.temp
+*.swp
+*.vpp
