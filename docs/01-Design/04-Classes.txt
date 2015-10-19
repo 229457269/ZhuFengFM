@@ -1,0 +1,11 @@
+这个类包含了所有主要类的说明
+1. SplashActivity 启动扉页/广告页
+2. WelcomeActivity 欢迎页
+3. MainActivity 主界面
+4. constants 包含使用常量
+--------------------------
+主界面四个大模块的Fragment定义
+1. DiscoverFragment 发现整体Fragment
+2. CustomTingFragment定义听整体Fragment
+3. DownLoadTingFragment现在听fragment
+4. PersonalFragment 自定义听Fragment
