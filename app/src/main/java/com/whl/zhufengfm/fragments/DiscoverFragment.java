@@ -28,28 +28,16 @@ public class DiscoverFragment extends Fragment implements TabLayout.OnTabSelecte
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        //
         View view = inflater.inflate(R.layout.fragment_discover, container, false);
 
 
 //        //TabLayout的加载
         TabLayout tabLayout = (TabLayout) view.findViewById(R.id.discover_top_tab_bar);
-//
-//        TabLayout.Tab tab = tabLayout.newTab().setText("推荐");
-//        tabLayout.addTab(tab);
-//        TabLayout.Tab tab2 = tabLayout.newTab().setText("分类");
-//        tabLayout.addTab(tab2);
-//        TabLayout.Tab tab3 = tabLayout.newTab().setText("直播");
-//        tabLayout.addTab(tab3);
-//        TabLayout.Tab tab4 = tabLayout.newTab().setText("榜单");
-//        tabLayout.addTab(tab4);
-//        TabLayout.Tab tab5 = tabLayout.newTab().setText("主播");
-//        tabLayout.addTab(tab5);
-
 
         //2.ViewPager的加载
 
         viewPager = (ViewPager) view.findViewById(R.id.discover_view_pager);
+
         List<BaseFragment> fragments = new ArrayList<BaseFragment>();
         fragments.add(new DisCoverRecommendFragment());
         fragments.add(new DisCoverCategoryFragment());
@@ -64,8 +52,8 @@ public class DiscoverFragment extends Fragment implements TabLayout.OnTabSelecte
         //ViewPager滑动与TabLayout绑定
         // pager.addOnPageChangeListener(new TabLayout.TabLayoutOnPageChangeListener(tabLayout));
 
-//        viewPager.setAdapter(pagerAdapter);
-//
+        viewPager.setAdapter(pagerAdapter);
+
 //        viewPager.addOnPageChangeListener(
 //                new TabLayout.TabLayoutOnPageChangeListener(tabLayout));
 
