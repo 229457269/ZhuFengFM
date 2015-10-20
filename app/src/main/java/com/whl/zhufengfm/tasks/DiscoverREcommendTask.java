@@ -8,7 +8,12 @@ import android.os.AsyncTask;
  * Email : 229457269@qq.com
  * Create_time : 2015/10/20 | 17:45
  */
-public class DiscoverREcommendTask extends AsyncTask<String,Void,TasklResult> {
+public class DiscoverREcommendTask extends BaseTask{
+
+    public DiscoverREcommendTask(TaskCallback taskCallback){
+        super(taskCallback);
+    }
+
     @Override
     protected TasklResult doInBackground(String... params) {
         return null;

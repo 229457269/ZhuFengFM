@@ -49,6 +49,8 @@ public class DiscoverCategroy {
             isFinished = json.optBoolean("isFinished");
             contentType = json.optString("contentType");
 
+        }else{
+            throw new NullPointerException("json is null");
         }
     }
 

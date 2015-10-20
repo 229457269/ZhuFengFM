@@ -8,19 +8,19 @@ import android.os.AsyncTask;
  * Email : 229457269@qq.com
  * Create_time : 2015/10/20 | 17:47
  */
-class BaseTask extends AsyncTask<String,Void,TasklResult>{
+public abstract class BaseTask extends AsyncTask<String,Void,TasklResult>{
 
-    private TaskCallback callback;
+    private TaskCallback taskCallback;
 
- //
-    @Override
-    protected TasklResult doInBackground(String... params) {
-
-//
-
-        return null;
-
+    public BaseTask(TaskCallback taskCallback) {
+        this.taskCallback = taskCallback;
     }
 
+    @Override
+    protected void onPostExecute(TasklResult result) {
+        if (taskCallback != null){
+            taskCallback.onTaskFinished(result);
+        }
 
+    }
 }

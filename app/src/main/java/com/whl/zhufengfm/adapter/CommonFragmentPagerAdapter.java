@@ -42,6 +42,8 @@ public class CommonFragmentPagerAdapter extends FragmentPagerAdapter{
         String ret = null;
 
         BaseFragment baseFragment = fragments.get(position);
+        notifyDataSetChanged();
+
         ret = baseFragment.getFragmentTitle();
         return ret;
 

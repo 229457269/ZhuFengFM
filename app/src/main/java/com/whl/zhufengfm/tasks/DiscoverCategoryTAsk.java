@@ -7,22 +7,19 @@ package com.whl.zhufengfm.tasks;
  * Create_time : 2015/10/20 | 16:30
  */
 
-import android.os.AsyncTask;
 import com.whl.zhufengfm.Constants;
 import com.whl.zhufengfm.client.ClientApi;
-import com.whl.zhufengfm.utils.EntityParseUtil;
+import com.whl.zhufengfm.entity.EntityParseUtil;
 import org.json.JSONException;
 import org.json.JSONObject;
 
 /**
  * 发现部分   分类的数据加载异步任务。
  */
-public class DiscoverCategoryTAsk extends AsyncTask<String,Void,TasklResult>{
+public class DiscoverCategoryTAsk extends BaseTask{
 
-    private TaskCallback callback;
-
-    public DiscoverCategoryTAsk(TaskCallback callback) {
-        this.callback = callback;
+    public DiscoverCategoryTAsk(TaskCallback taskCallback) {
+        super(taskCallback);
     }
 
     @Override
@@ -39,22 +36,16 @@ public class DiscoverCategoryTAsk extends AsyncTask<String,Void,TasklResult>{
                 //代表数据  服务器返回结果
                 ret.resultCode = jsonObject.getInt("ret");
 
-                //代表获取的结果
-                ret.data =
-                        EntityParseUtil.parseDiscoveryCategory(jsonObject);
-
+                if (ret.resultCode == 0){
+                    //代表获取的结果
+                    ret.data =
+                            EntityParseUtil.parseDiscoveryCategory(jsonObject);
+                }
             } catch (JSONException e) {
                 e.printStackTrace();
             }
 
         }
         return ret;
-    }
-
-    @Override
-    protected void onPostExecute(TasklResult result) {
-        if (callback != null) {
-            callback.onTaskFinished(taskResult);
-        }
     }
 }

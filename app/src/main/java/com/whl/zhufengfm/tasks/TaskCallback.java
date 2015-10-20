@@ -18,5 +18,4 @@ public interface TaskCallback {
      */
     void onTaskFinished(TasklResult result);
 
-
 }

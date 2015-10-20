@@ -16,21 +16,35 @@ import com.whl.zhufengfm.fragments.PersonalFragment;
 public class MainActivity extends FragmentActivity implements RadioGroup.OnCheckedChangeListener {
 //    主界面第一层Fragment发现，定制听，下载听，我
     private Fragment fragments[];
+
+    private FragmentTransaction tx;
+    private FragmentManager manager;
+    int current =0 ;
+    private static boolean isLoad = false;
+
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        fragments=new Fragment[4];
 
-
-        FragmentManager manager=getSupportFragmentManager();
-        android.support.v4.app.FragmentTransaction tx=manager.beginTransaction();
-
-        int len=fragments.length;
+        if(savedInstanceState!=null){
+            fragments = new Fragment[4];
 
             fragments[0]=new DiscoverFragment();
             fragments[1]=new CustomerTingFragment();
             fragments[2]=new DownLoadTingFragment();
             fragments[3]=new PersonalFragment();
+        }else{
+            fragments = (Fragment[]) savedInstanceState.getSerializable("fragments");
+            current = savedInstanceState
+                    .getInt("cur");
+            isLoad = true;
+        }
+        FragmentManager manager=getSupportFragmentManager();
+        android.support.v4.app.FragmentTransaction tx=manager.beginTransaction();
+
+        int len=fragments.length;
+
+
 
             for (int i = 0; i < len; i++) {
                 tx.add(R.id.main_fragment_container,fragments[i]);

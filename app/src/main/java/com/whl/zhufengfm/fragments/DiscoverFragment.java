@@ -33,7 +33,7 @@ public class DiscoverFragment extends Fragment implements TabLayout.OnTabSelecte
 
 
 //        //TabLayout的加载
-        TabLayout tabLayout = (TabLayout) view.findViewById(R.id.discover_tab_bar);
+        TabLayout tabLayout = (TabLayout) view.findViewById(R.id.discover_top_tab_bar);
 //
 //        TabLayout.Tab tab = tabLayout.newTab().setText("推荐");
 //        tabLayout.addTab(tab);
@@ -68,11 +68,12 @@ public class DiscoverFragment extends Fragment implements TabLayout.OnTabSelecte
 //
 //        viewPager.addOnPageChangeListener(
 //                new TabLayout.TabLayoutOnPageChangeListener(tabLayout));
-//        tabLayout.setOnTabSelectedListener(this);
+
 
         //代码添加： 封装了TabLayout 与ViewPager的联动。
         //需要  ViewPager内部指定的Adapter   必须要重写getPageTitle();
         tabLayout.setupWithViewPager(viewPager);
+        tabLayout.setOnTabSelectedListener(this);
 
         return view;
     }
