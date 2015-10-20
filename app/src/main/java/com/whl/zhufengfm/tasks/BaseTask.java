@@ -15,7 +15,9 @@ class BaseTask extends AsyncTask<String,Void,TasklResult>{
 
     @Override
     protected TasklResult doInBackground(String... params) {
+
         return null;
+
     }
 
 
