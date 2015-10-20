@@ -38,6 +38,8 @@ public class MainActivity extends FragmentActivity implements RadioGroup.OnCheck
             current = savedInstanceState
                     .getInt("cur");
             isLoad = true;
+
+            
         }
         FragmentManager manager=getSupportFragmentManager();
         android.support.v4.app.FragmentTransaction tx=manager.beginTransaction();

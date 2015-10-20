@@ -2,6 +2,7 @@
 
 buildscript {
     repositories {
+        //指定默认的jar包仓库是jcenter(一个特定的网站)
         jcenter()
     }
     dependencies {

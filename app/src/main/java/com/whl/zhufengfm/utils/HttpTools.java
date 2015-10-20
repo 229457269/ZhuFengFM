@@ -1,6 +1,7 @@
 package com.whl.zhufengfm.utils;
 
 import android.os.Build;
+import android.util.Log;
 
 import java.io.IOException;
 import java.io.InputStream;
@@ -26,6 +27,7 @@ public final class HttpTools {
 
     private static final int CONNECTION_TIMEOUT = 5000;
     private static final int READ_TIMEOUT = 10000;
+    public static final String UER_AGENT = "ting_4.1.7(" + Build.MODEL + "," + Build.VERSION.SDK_INT + ")";
 
     /**
      * 根据url地址下载数据，返回字节数组
@@ -34,6 +36,7 @@ public final class HttpTools {
      */
 
     public static byte[] doGet(String url) {
+        Log.i("info",url+"=====");
         byte[] ret = null;
         if (url != null) {
             HttpURLConnection connection = null;
@@ -54,13 +57,13 @@ public final class HttpTools {
 
 
                 //设置 user-agent
-                String UER_AGENT = "ting_4.1.7(" + Build.MODEL + "," + Build.VERSION.SDK_INT + ")";
-                connection.setRequestProperty("User-agent", UER_AGENT);
+                connection.setRequestProperty("User-Agent", UER_AGENT);
 
                 connection.connect();
                 int code = connection.getResponseCode();
                 if (code == 200) {
                     InputStream fin = null;
+
                     fin = connection.getInputStream();
                     //TODO  进行网络输入流的压缩
                     String encoding = connection.getHeaderField("Content-Encoding");
@@ -70,6 +73,8 @@ public final class HttpTools {
                     }
 
                     ret = StreamUtils.readStream(fin);
+
+                    Log.i("info",ret.toString());
                 }
             } catch (MalformedURLException e) {
                 e.printStackTrace();
