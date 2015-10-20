@@ -64,7 +64,7 @@ public class DiscoverFragment extends Fragment implements TabLayout.OnTabSelecte
         tabLayout.setOnTabSelectedListener(this);
 
         return view;
-        
+
     }
 
 
