@@ -12,7 +12,7 @@ import com.whl.zhufengfm.R;
 /**
  * A simple {@link Fragment} subclass.
  */
-public class PersonalFragment extends Fragment {
+public class PersonalFragment extends android.support.v4.app.Fragment {
 
 
     public PersonalFragment() {

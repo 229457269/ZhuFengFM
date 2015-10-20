@@ -12,7 +12,7 @@ import com.whl.zhufengfm.R;
 /**
  * A simple {@link Fragment} subclass.
  */
-public class CustomerTingFragment extends Fragment {
+public class CustomerTingFragment extends android.support.v4.app.Fragment {
 
 
     public CustomerTingFragment() {

@@ -9,3 +9,11 @@
 2. CustomTingFragment定义听整体Fragment
 3. DownLoadTingFragment现在听fragment
 4. PersonalFragment 自定义听Fragment
+
+--------------------------
+
+发现  DiscoverFragmen内部子Fragment的定义。
+
+1，DiscoverRecomment 发现部分的推荐
+
+使用的接口对应接口文档11.
