@@ -12,9 +12,11 @@ class BaseTask extends AsyncTask<String,Void,TasklResult>{
 
     private TaskCallback callback;
 
-
+ //
     @Override
     protected TasklResult doInBackground(String... params) {
+
+//
 
         return null;
 
