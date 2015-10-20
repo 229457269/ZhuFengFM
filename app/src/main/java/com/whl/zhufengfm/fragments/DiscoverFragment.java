@@ -22,6 +22,8 @@ public class DiscoverFragment extends Fragment implements TabLayout.OnTabSelecte
 
     public DiscoverFragment() {
         // Required empty public constructor
+
+        
     }
 
     @Override
